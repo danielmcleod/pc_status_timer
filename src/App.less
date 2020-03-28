@@ -1,0 +1,82 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.status-wrapper {
+  margin-top: 250px;
+  text-align: center;
+
+  .status {
+    font-size: 40px;
+    font-weight: 600;
+    color: #555;
+
+    .away,.break,.meal,.training {
+      color: #ffbb33;
+    }
+    .onqueue {
+      color: #21c0f6;
+    }
+    .available {
+      color: #77dd22;
+    }
+    .busy,.meeting {
+      color: red;
+    }
+    .time {
+      font-size: 35px;
+      color: #000;
+    }
+  }
+}
+
+.loading {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+}
+
+.loading-circle {
+  margin: auto;
+  height: 125px;
+  width: 125px;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.loader {
+  border: 6px solid #fff;
+  border-radius: 50%;
+  border-left: 6px solid #003f7f;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 1.25s linear infinite;
+  animation: spin 1.25s linear infinite;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
