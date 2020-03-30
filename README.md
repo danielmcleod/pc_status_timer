@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Genesys Cloud / PureCloud Status Timer
 
-## Available Scripts
+A web page that shows the current logged in users status and the time they have been in that status.
 
-In the project directory, you can run:
+![screenshot1](https://d3d9jcb51pucvn.cloudfront.net/PureCloud_Status_Timer_Screenshot_1.png)
 
-### `npm start`
+![screenshot2](https://d3d9jcb51pucvn.cloudfront.net/PureCloud_Status_Timer_Screenshot_2.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Running the app
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* A React dev environment
+  * You'll want to configure the .env file with the Oauth client id you generate in PureCloud
+* A secure web server
+  * Once you create a build, you can upload the code to AWS S3 and then create a cloudfront distribution for the bucket if you don't have a web server or want to get this up quickly.
+* A Genesys Cloud / PureCloud Org
+  * You'll need to generate an Oauth app with a grant type of token implicit grant. Refer to the [Resource Center](https://help.mypurecloud.com/articles/create-an-oauth-client/) on how to configure this. You'll need to add the web server URL in the Authorized Redirect URIs field.
+  * You can embed this as an app in PureCloud by adding an integration of the type Custom Client Application. Refer to the [Resource Center](https://help.mypurecloud.com/articles/set-custom-client-application-integration/) for instructions on setting this up.
 
-### `npm run build`
+## Setup
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this repo locally
+2. Create an Oauth app with the Token Implicit Grant type
+3. Modify the .env file to include the oauth client id you create
+4. Build and Deploy to a web server
+5. Create a Custom Client Integration with the URL of the web server
+6. Update the Oauth app with the URL as an Authorized Redirect URI
+7. Configure the Custom Client Integration Group Filtering to determine who has access 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Using the app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. View your status
 
-### `npm run eject`
+## Troubleshooting
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. If the app is not working properly, press the refresh button
+2. If the timer shows a negative time or appears to be off by more than a few seconds, ensure your computers time is correct
