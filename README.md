@@ -23,7 +23,7 @@ A web page that shows the current logged in users status and the time they have 
 
 1. Clone this repo locally
 2. Create an Oauth app with the Token Implicit Grant type
-3. Modify the .env file to include the oauth client id you create
+3. Modify the .env file to include the oauth client id you create for testing and build with SET "REACT_APP_PURECLOUD_CLIENT_ID='00000000-0000-0000-0000-000000000000'" && npm run build
 4. Build and Deploy to a web server
 5. Create a Custom Client Integration with the URL of the web server
 6. Update the Oauth app with the URL as an Authorized Redirect URI
