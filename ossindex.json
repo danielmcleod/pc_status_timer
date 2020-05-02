@@ -1,0 +1,17 @@
+{
+  "author": "Qsect LLC",
+  "title": "Status Timer",
+  "logo_url": "https://www.qsect.com/static/media/logo.svg",
+  "categories": [
+    "integrations"
+  ],
+  "tags": [
+    "Presence"
+  ],
+  "apis": [
+    "platform"
+  ],
+  "sdks": [
+    "javascript"
+  ]
+}
